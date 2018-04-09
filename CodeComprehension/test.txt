@@ -1,0 +1,2 @@
+acct_123|ch_123|123|charge_123_descriptor
+acct_234|ch_234|456|charge_234_descriptor
