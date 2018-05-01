@@ -92,8 +92,12 @@ module Pancake
     def load(line)
       data = line.split(@column_separator)
 
-      data.each_with_index do |chunk, idx|
-        load_field(chunk, idx)
+      if data.length == @column_count
+        data.each_with_index do |chunk, idx|
+           load_field(chunk, idx)
+        end
+      else
+        raise ArgumentError, "Unable to find the correct number of fields (#{@column_count}). Found #{data.length} instead."
       end
     end
 
